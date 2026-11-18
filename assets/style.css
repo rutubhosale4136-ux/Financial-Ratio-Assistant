@@ -1,0 +1,324 @@
+/* ============================================================================
+   Financial Statement Ratio Analysis Assistant - SaaS Design Theme
+   Palette:
+   - Deep Navy:  #142B4A
+   - Royal Blue: #2878D0
+   - Teal:       #13A89E
+   - Purple:     #8064C8
+   - Green:      #20A46B
+   - Amber:      #E99A35
+   - Canvas Bg:  #F4F7FC
+   - Cards:      #FFFFFF
+   ============================================================================ */
+
+:root {
+    --deep-navy: #142B4A;
+    --royal-blue: #2878D0;
+    --teal: #13A89E;
+    --purple: #8064C8;
+    --green: #20A46B;
+    --amber: #E99A35;
+    --bg-canvas: #F4F7FC;
+    --card-bg: #FFFFFF;
+    --text-primary: #142B4A;
+    --text-muted: #5A6E85;
+    --border-soft: #E2E8F0;
+    --border-subtle: #CBD5E1;
+    --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Global App Styling */
+html, body, [class*="css"], .stApp {
+    font-family: var(--font-stack) !important;
+    background-color: var(--bg-canvas) !important;
+    color: var(--text-primary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--deep-navy) !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.3px;
+}
+
+/* ============================================================================
+   1. SIDEBAR DESIGN (Deep Navy #142B4A)
+   ============================================================================ */
+section[data-testid="stSidebar"] {
+    background-color: var(--deep-navy) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+section[data-testid="stSidebar"] p,
+section[data-testid="stSidebar"] span,
+section[data-testid="stSidebar"] div,
+section[data-testid="stSidebar"] label {
+    color: #FFFFFF !important;
+}
+
+section[data-testid="stSidebar"] hr {
+    border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* Sidebar Radio Navigation List */
+section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"] > label {
+    background-color: transparent !important;
+    border-radius: 8px !important;
+    padding: 10px 14px !important;
+    margin-bottom: 5px !important;
+    color: #E2E8F0 !important;
+    font-size: 0.92rem !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+    border: 1px solid transparent !important;
+    cursor: pointer !important;
+}
+
+section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"] > label:hover {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    color: #FFFFFF !important;
+    border-color: rgba(255, 255, 255, 0.14) !important;
+}
+
+/* Active Highlight (Royal Blue #2878D0) */
+section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"] > label:has(input:checked),
+section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"] > label[data-checked="true"] {
+    background: linear-gradient(135deg, #2878D0 0%, #1D65B5 100%) !important;
+    color: #FFFFFF !important;
+    font-weight: 600 !important;
+    border-color: #3B82F6 !important;
+    box-shadow: 0 4px 12px rgba(40, 120, 208, 0.35) !important;
+}
+
+/* Hide native radio button dots in sidebar */
+section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"] > label > div:first-child {
+    display: none !important;
+}
+
+/* Sidebar Logout Button */
+section[data-testid="stSidebar"] button[kind="secondary"] {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    color: #FFFFFF !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease !important;
+}
+
+section[data-testid="stSidebar"] button[kind="secondary"]:hover {
+    background: rgba(239, 68, 68, 0.22) !important;
+    border-color: #EF4444 !important;
+    color: #FFFFFF !important;
+    transform: translateY(-1px) !important;
+}
+
+/* ============================================================================
+   2. DASHBOARD KPI METRIC CARDS
+   ============================================================================ */
+div[data-testid="stMetric"] {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--border-soft) !important;
+    border-radius: 12px !important;
+    padding: 1.15rem 1.25rem !important;
+    box-shadow: 0 2px 8px rgba(20, 43, 74, 0.04) !important;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease !important;
+}
+
+div[data-testid="stMetric"]:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 20px rgba(20, 43, 74, 0.08) !important;
+    border-color: var(--border-subtle) !important;
+}
+
+div[data-testid="stMetricLabel"] {
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    color: var(--text-muted) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.3px !important;
+}
+
+div[data-testid="stMetricValue"] {
+    font-size: 1.7rem !important;
+    font-weight: 800 !important;
+    color: var(--deep-navy) !important;
+    margin-top: 2px !important;
+}
+
+/* ============================================================================
+   3. BUTTONS (Royal Blue & Teal)
+   ============================================================================ */
+button[kind="primary"] {
+    background: linear-gradient(135deg, #2878D0 0%, #1D65B5 100%) !important;
+    border: none !important;
+    color: #FFFFFF !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    padding: 0.55rem 1.25rem !important;
+    box-shadow: 0 2px 8px rgba(40, 120, 208, 0.25) !important;
+    transition: all 0.2s ease !important;
+}
+
+button[kind="primary"]:hover {
+    background: linear-gradient(135deg, #1D65B5 0%, #144B88 100%) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 14px rgba(40, 120, 208, 0.4) !important;
+}
+
+button[kind="secondary"] {
+    background-color: #FFFFFF !important;
+    border: 1.5px solid #CBD5E1 !important;
+    color: var(--deep-navy) !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    transition: all 0.2s ease !important;
+}
+
+button[kind="secondary"]:hover {
+    background-color: #F8FAFC !important;
+    border-color: var(--teal) !important;
+    color: var(--teal) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 3px 10px rgba(19, 168, 158, 0.15) !important;
+}
+
+/* ============================================================================
+   4. TABLES, DATAFRAMES & FORMS
+   ============================================================================ */
+div[data-testid="stDataFrame"] {
+    border: 1px solid var(--border-soft) !important;
+    border-radius: 10px !important;
+    background-color: #FFFFFF !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02) !important;
+    overflow: hidden !important;
+}
+
+div[data-baseweb="input"] {
+    border-radius: 8px !important;
+    border: 1px solid var(--border-subtle) !important;
+    background-color: #FFFFFF !important;
+    transition: all 0.2s ease !important;
+}
+
+div[data-baseweb="input"]:focus-within {
+    border-color: var(--royal-blue) !important;
+    box-shadow: 0 0 0 3px rgba(40, 120, 208, 0.15) !important;
+}
+
+div[data-baseweb="select"] {
+    border-radius: 8px !important;
+}
+
+/* Tabs */
+button[data-baseweb="tab"] {
+    font-weight: 600 !important;
+    color: var(--text-muted) !important;
+    padding: 8px 18px !important;
+    border-radius: 6px 6px 0 0 !important;
+}
+
+button[data-baseweb="tab"][aria-selected="true"] {
+    color: var(--royal-blue) !important;
+    border-bottom-color: var(--royal-blue) !important;
+    border-bottom-width: 3px !important;
+}
+
+/* ============================================================================
+   5. FINANCIAL CATEGORY CARD ACCENTS
+   - Liquidity:    Blue   (#2878D0)
+   - Profitability: Green  (#20A46B)
+   - Solvency:     Purple (#8064C8)
+   - Efficiency:   Teal   (#13A89E)
+   - Cash Flow:    Orange (#E99A35)
+   ============================================================================ */
+.card-liquidity {
+    border-top: 4px solid var(--royal-blue) !important;
+    background: #FFFFFF;
+}
+.card-profitability {
+    border-top: 4px solid var(--green) !important;
+    background: #FFFFFF;
+}
+.card-solvency {
+    border-top: 4px solid var(--purple) !important;
+    background: #FFFFFF;
+}
+.card-efficiency {
+    border-top: 4px solid var(--teal) !important;
+    background: #FFFFFF;
+}
+.card-cashflow {
+    border-top: 4px solid var(--amber) !important;
+    background: #FFFFFF;
+}
+
+/* Expander Cards */
+div[data-testid="stExpander"] {
+    background-color: #FFFFFF !important;
+    border: 1px solid var(--border-soft) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03) !important;
+    margin-bottom: 8px !important;
+}
+
+/* ============================================================================
+   6. FINTECH SPLIT-SCREEN AUTHENTICATION STYLING
+   ============================================================================ */
+@keyframes floatSlow {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-7px) rotate(-0.5deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes floatFast {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes floatCoin {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-9px) rotate(4deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.auth-hero-card {
+    background: linear-gradient(135deg, #142B4A 0%, #173660 40%, #1A4479 70%, #205396 100%);
+    border-radius: 20px;
+    padding: 34px 30px;
+    color: #FFFFFF;
+    box-shadow: 0 14px 36px rgba(20, 43, 74, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    position: relative;
+    overflow: hidden;
+}
+
+.float-metric-card {
+    background: rgba(20, 43, 74, 0.78);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 10px 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+}
+
+.anim-float-1 {
+    animation: floatSlow 4.5s ease-in-out infinite;
+}
+
+.anim-float-2 {
+    animation: floatFast 3.8s ease-in-out infinite;
+}
+
+.anim-coin {
+    animation: floatCoin 4s ease-in-out infinite;
+}
+
+.auth-card-right,
+div[data-testid="stVerticalBlockBorderWrapper"] {
+    background-color: #FFFFFF !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 20px !important;
+    padding: 24px 26px !important;
+    box-shadow: 0 12px 32px rgba(20, 43, 74, 0.06) !important;
+}
